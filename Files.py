@@ -45,12 +45,12 @@ with open('task5.txt', 'r', encoding='utf-8') as src, open('task7.txt', 'w', enc
     dest.write(src.read())
 
 '''''''''''''''''''''''''''Task 8'''''''''''''''''''''''''''
-def delete_file(file_path):
-    if os.path.exists(file_path):
-        if os.access(file_path, os.R_OK) and os.access(file_path, os.W_OK):
-            os.remove(file_path)
-            print(f"Файл '{file_path}' успешно удалён.")
-        else:
-            print(f"Нет доступа к файлу '{file_path}'.")
+file_path = ''
+if os.path.exists(file_path):
+    if os.access(file_path, os.R_OK) and os.access(file_path, os.W_OK):
+        os.remove(file_path)
+        print("Файл удалён.")
     else:
-        print(f"Файл '{file_path}' не существует.")
+        print("Нет доступа к файлу.")
+else:
+    print("Файл не существует.")
