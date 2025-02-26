@@ -1,17 +1,26 @@
 '''''''''''''''''''''''''''Task 1'''''''''''''''''''''''''''
 import math
-math.prod([1, 2, 3, 4, 5, 6])
+import functools as ft
+import operator as op
+ft.reduce(op.mul([1, 2, 3, 4, 5, 6]))
 
 '''''''''''''''''''''''''''Task 2'''''''''''''''''''''''''''
+import operator as op
+import math
+import functools as ft
+def low(x):
+    if x.islower() == True:
+        s = 1
+        return int(1)
+    else:
+        return 0
 b = str(input())
 countu = 0
 countl = 0
-for i in b:
-    if i.isupper():
-        countu+=1
-    elif i.islower():
-        countl+=1
-print(countu,countl)
+a = list(map(low,b))
+print(a)
+countu = ft.reduce(op.add,(list(map(low,b))))
+print(countu,len(b)-countu)
 
 '''''''''''''''''''''''''''Task 3'''''''''''''''''''''''''''
 s = str(input())

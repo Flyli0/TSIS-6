@@ -1,2 +1,16 @@
-with open('task5.txt', 'r', encoding='utf-8') as src, open('task7.txt', 'w', encoding='utf-8') as dest:
-    dest.write(src.read())
+import operator as op
+import math
+import functools as ft
+def low(x):
+    if x.islower() == True:
+        s = 1
+        return int(1)
+    else:
+        return 0
+b = str(input())
+countu = 0
+countl = 0
+a = list(map(low,b))
+print(a)
+countu = ft.reduce(op.add,(list(map(low,b))))
+print(countu,len(b)-countu)
